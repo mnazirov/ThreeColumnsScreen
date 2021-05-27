@@ -5,32 +5,30 @@ import PlaygroundSupport
 
 class MyViewController : UIViewController {
     
+    // MARK: - Private UI Elements
     private let squareView = UIView()
-    
-    private let mainStackView = UIStackView()
-    private let twoItemsStackView = UIStackView()
-    private let threeItemsStackViews = UIStackView()
-    
     private let customBlueView: UIView = {
         let viewColor = UIView()
         viewColor.backgroundColor = UIColor(.blue)
         return viewColor
     }()
+    
+    private let mainStackView = UIStackView()
+    private let twoItemsStackView = UIStackView()
+    private let threeItemsStackViews = UIStackView()
+
         
     override func loadView() {
         view = UIView()
         view.backgroundColor = .white
-    }
-    
-    override func viewDidLayoutSubviews() {
-        configureSquareView()
-        configureMainStackView()
-        configureTwoItemsStackView()
-        configureThreeItems()
         
+        configureUIElements()
+    }
+    override func viewWillLayoutSubviews() {
         setConstraints()
     }
     
+    // MARK: - Configure UI Elements
     private func configureSquareView() {
         squareView.backgroundColor = .lightGray
         view.addSubview(squareView)
@@ -55,7 +53,7 @@ class MyViewController : UIViewController {
         
         twoItemsStackView.addArrangedSubview(createColorView(color: UIColor(.blue)))
         twoItemsStackView.addArrangedSubview(customBlueView)
-        //twoItemsStackView.addArrangedSubview(createColorView(color: UIColor(.blue)))
+        
     }
     
     private func configureThreeItems() {
@@ -68,20 +66,28 @@ class MyViewController : UIViewController {
         threeItemsStackViews.addArrangedSubview(createColorView(color: UIColor(.yellow)))
     }
     
+    private func configureUIElements() {
+        configureSquareView()
+        configureMainStackView()
+        configureTwoItemsStackView()
+        configureThreeItems()
+    }
+    
+    // MARK: - Generation UIView with a specific color
     private func createColorView(color: UIColor) -> UIView {
         let colorView = UIView()
-        
         colorView.backgroundColor = color
-        
+
         return colorView
     }
     
+    
+    // MARK: - Setting constraints
     private func setConstraints() {
         squareView.translatesAutoresizingMaskIntoConstraints = false
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
         twoItemsStackView.translatesAutoresizingMaskIntoConstraints = false
         threeItemsStackViews.translatesAutoresizingMaskIntoConstraints = false
-        customBlueView.translatesAutoresizingMaskIntoConstraints = false
         
         let outsideSpacing: CGFloat = 80
         let insideSpasing: CGFloat = 40
