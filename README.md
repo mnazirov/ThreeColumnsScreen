@@ -13,4 +13,4 @@
 - [X] При перевороте набок соотношения и условия сохраняются
 
 # Пример интерфейса
-![Preview app](https://github.com/mnazirov/ThreeColumnsScreen/blob/83bad99f1b4771872d9a3665df9a5aec33f9178b/Source/preview_screen.png)
+![Preview app](https://github.com/mnazirov/ThreeColumnsScreen/blob/b332712e819ae6ead585ad8e5c6979374504ec6b/Source/preview.png)
