@@ -12,4 +12,4 @@
 - Третий столбец состоит из 3-ех частей, каждая из которого это 1/3 от первого
 
 # Пример интерфейса
-![Preview app](-)
+![Preview app](https://github.com/mnazirov/ThreeColumnsScreen/blob/0d50a02a8afc01bb2bc138f19d20596241002063/Source/preview.png)
